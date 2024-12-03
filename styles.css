@@ -50,11 +50,17 @@ header, #main-content, #footer-placeholder {
     display: none; /* Hide initially */
 }
 
+/* Header (Nav Bar) */
 header {
+    position: fixed; /* Fixed position */
+    top: 0; /* Align to the top */
+    left: 0;
+    width: 100%; /* Full width */
     background: #333;
     color: white;
     padding: 10px 0;
     text-align: center;
+    z-index: 999; /* Ensure it stays on top of other content */
 }
 
 nav ul {
@@ -84,7 +90,7 @@ nav ul li a:hover {
 
 section {
     padding: 20px;
-    margin: 10px 0;
+    margin: 50px 0; /* Adjust for fixed header */
     background: white;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -92,6 +98,19 @@ section {
 
 h2 {
     color: #4CAF50;
+}
+
+/* Footer */
+footer {
+    position: fixed; /* Fixed position */
+    bottom: 0; /* Align to the bottom */
+    left: 0;
+    width: 100%; /* Full width */
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    z-index: 999; /* Ensure it stays on top of other content */
 }
 
 /* Modal styles */
@@ -169,7 +188,7 @@ h2 {
     }
 
     section {
-        margin: 5px 0;
+        margin: 60px 0; /* Adjust for fixed header */
     }
 }
 
@@ -191,6 +210,10 @@ h2 {
     .modal-content {
         width: 90%;
     }
+
+    section {
+        margin: 70px 0; /* Adjust for fixed header */
+    }
 }
 
 @media (max-width: 480px) {
@@ -210,5 +233,9 @@ h2 {
 
     .contact-form button {
         width: 100%;
+    }
+
+    section {
+        margin: 80px 0; /* Adjust for fixed header */
     }
 }
