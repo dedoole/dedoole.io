@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Hide the main content initially
-    document.getElementById('main-content').style.display = 'none';
     console.log('DOMContentLoaded: Main content hidden.');
 });
 
@@ -30,7 +29,6 @@ async function loadHeader() {
         const text = await response.text();
         document.getElementById('header-placeholder').innerHTML = text;
         console.log('Header loaded.');
-        document.getElementById('nav-bar').style.display = 'block'; // Show nav bar after loading
     } catch (error) {
         console.error('Error loading header:', error);
     }
@@ -86,11 +84,15 @@ function init3DScene() {
     animate();
 }
 
-// Add this to handle the loading screen
+// Handle the loading screen
 window.addEventListener('load', () => {
     setTimeout(() => {
         document.getElementById('loading-screen').style.display = 'none';
+        document.querySelector('header').style.display = 'block';
+        document.getElementById('main-content').style.display = 'block';
+        document.getElementById('footer-placeholder').style.display = 'block';
         loadContent('about.html'); // Load the "About Me" content by default after loading screen
         console.log('Loading screen hidden, About Me content loaded.');
+        document.body.style.overflow = 'auto'; // Allow scrolling after loading screen
     }, 5000); // 5 seconds
 });
