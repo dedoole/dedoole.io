@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('DOMContentLoaded: Main content hidden.');
 });
 
+// Function to load content dynamically into a specified container
 async function loadContent(page, containerId) {
     try {
         console.log(`Loading ${page} into ${containerId}`);
@@ -16,16 +17,19 @@ async function loadContent(page, containerId) {
     }
 }
 
+// Function to load header.html into the header placeholder
 async function loadHeader() {
     console.log('Loading header...');
     await loadContent('header.html', 'header-placeholder');
 }
 
+// Function to load footer.html into the footer placeholder
 async function loadFooter() {
     console.log('Loading footer...');
     await loadContent('footer.html', 'footer-placeholder');
 }
 
+// Function to hide the loading screen and show the main content
 function showContentAfterLoad() {
     console.log('Hiding loading screen and displaying content');
     document.getElementById('loading-screen').style.display = 'none';
@@ -37,6 +41,7 @@ function showContentAfterLoad() {
     console.log('Loading screen hidden, About Me content loaded.');
 }
 
+// Function to initialize the header, footer, and main content loading
 async function init() {
     console.log('Initializing...');
     await loadHeader();
@@ -59,7 +64,7 @@ function closeContactForm() {
     document.getElementById('contact-modal').style.display = 'none';
 }
 
-// Initialize 3D scene
+// Initialize 3D scene for the contact form modal
 function init3DScene() {
     const canvas = document.getElementById('3d-canvas');
     const renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
