@@ -1,57 +1,53 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Hide the main content initially
     console.log('DOMContentLoaded: Main content hidden.');
 });
 
-// Function to load content dynamically into a specified container
-async function loadContent(page, containerId) {
+// Function to dynamically load content
+function loadContent(page) {
+    fetch(page)
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.text();
+    })
+    .then(data => {
+        document.getElementById('main-content').innerHTML = data;
+        document.getElementById('main-content').style.display = 'block';
+        window.scrollTo(0, 0); // Scroll to the top of the page
+        console.log(`${page} content loaded.`);
+    })
+    .catch(error => console.error('Error loading content:', error));
+}
+
+// Function to load header.html
+async function loadHeader() {
     try {
-        console.log(`Attempting to load ${page} into ${containerId}`);
-        const response = await fetch(page);
-        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+        const response = await fetch('header.html');
+        if (!response.ok) throw new Error('Network response was not ok');
         const text = await response.text();
-        document.getElementById(containerId).innerHTML = text;
-        document.getElementById(containerId).style.display = 'block';
-        console.log(`Successfully loaded ${page} into ${containerId}`);
+        document.getElementById('header-placeholder').innerHTML = text;
+        console.log('Header loaded.');
     } catch (error) {
-        console.error(`Error loading ${page} into ${containerId}:`, error);
+        console.error('Error loading header:', error);
     }
 }
+loadHeader();
 
-// Function to load header.html into the header placeholder
-async function loadHeader() {
-    console.log('Loading header...');
-    await loadContent('header.html', 'header-placeholder');
-}
-
-// Function to load footer.html into the footer placeholder
+// Function to load footer.html
 async function loadFooter() {
-    console.log('Loading footer...');
-    await loadContent('footer.html', 'footer-placeholder');
+    try {
+        const response = await fetch('footer.html');
+        if (!response.ok) throw new Error('Network response was not ok');
+        const text = await response.text();
+        document.getElementById('footer-placeholder').innerHTML = text;
+        console.log('Footer loaded.');
+    } catch (error) {
+        console.error('Error loading footer:', error);
+    }
 }
-
-// Function to hide the loading screen and show the main content
-function showContentAfterLoad() {
-    console.log('Hiding loading screen and displaying content');
-    document.getElementById('loading-screen').style.display = 'none';
-    document.querySelector('header').style.display = 'block';
-    document.getElementById('main-content').style.display = 'block';
-    document.getElementById('footer-placeholder').style.display = 'block';
-    document.body.style.overflow = 'auto'; // Allow scrolling after loading screen
-    loadContent('about.html', 'main-content'); // Load the "About Me" content by default
-    console.log('Loading screen hidden, About Me content loaded.');
-}
-
-// Function to initialize the header, footer, and main content loading
-async function init() {
-    console.log('Initializing...');
-    await loadHeader();
-    await loadFooter();
-    window.addEventListener('load', () => {
-        setTimeout(showContentAfterLoad, 5000); // 5 seconds
-    });
-}
-
-init();
+loadFooter();
 
 // Function to show the contact form modal
 function showContactForm() {
@@ -64,7 +60,7 @@ function closeContactForm() {
     document.getElementById('contact-modal').style.display = 'none';
 }
 
-// Initialize 3D scene for the contact form modal
+// Initialize 3D scene
 function init3DScene() {
     const canvas = document.getElementById('3d-canvas');
     const renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
@@ -85,4 +81,18 @@ function init3DScene() {
         renderer.render(scene, camera);
     }
 
-    animate
+    animate();
+}
+
+// Handle the loading screen
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        document.getElementById('loading-screen').style.display = 'none';
+        document.querySelector('header').style.display = 'block';
+        document.getElementById('main-content').style.display = 'block';
+        document.getElementById('footer-placeholder').style.display = 'block';
+        loadContent('about.html'); // Load the "About Me" content by default after loading screen
+        console.log('Loading screen hidden, About Me content loaded.');
+        document.body.style.overflow = 'auto'; // Allow scrolling after loading screen
+    }, 5000); // 5 seconds
+});
