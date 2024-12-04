@@ -1,98 +1,44 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Hide the main content initially
     console.log('DOMContentLoaded: Main content hidden.');
 });
 
-// Function to dynamically load content
-function loadContent(page) {
-    fetch(page)
-    .then(response => {
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        return response.text();
-    })
-    .then(data => {
-        document.getElementById('main-content').innerHTML = data;
-        document.getElementById('main-content').style.display = 'block';
-        window.scrollTo(0, 0); // Scroll to the top of the page
+async function loadContent(page, containerId) {
+    try {
+        const response = await fetch(page);
+        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+        const text = await response.text();
+        document.getElementById(containerId).innerHTML = text;
+        document.getElementById(containerId).style.display = 'block';
         console.log(`${page} content loaded.`);
-    })
-    .catch(error => console.error('Error loading content:', error));
+    } catch (error) {
+        console.error(`Error loading ${page}:`, error);
+    }
 }
 
-// Function to load header.html
 async function loadHeader() {
-    try {
-        const response = await fetch('header.html');
-        if (!response.ok) throw new Error('Network response was not ok');
-        const text = await response.text();
-        document.getElementById('header-placeholder').innerHTML = text;
-        console.log('Header loaded.');
-    } catch (error) {
-        console.error('Error loading header:', error);
-    }
+    await loadContent('header.html', 'header-placeholder');
 }
-loadHeader();
 
-// Function to load footer.html
 async function loadFooter() {
-    try {
-        const response = await fetch('footer.html');
-        if (!response.ok) throw new Error('Network response was not ok');
-        const text = await response.text();
-        document.getElementById('footer-placeholder').innerHTML = text;
-        console.log('Footer loaded.');
-    } catch (error) {
-        console.error('Error loading footer:', error);
-    }
-}
-loadFooter();
-
-// Function to show the contact form modal
-function showContactForm() {
-    document.getElementById('contact-modal').style.display = 'flex';
-    init3DScene();
+    await loadContent('footer.html', 'footer-placeholder');
 }
 
-// Function to close the contact form modal
-function closeContactForm() {
-    document.getElementById('contact-modal').style.display = 'none';
+function showContentAfterLoad() {
+    document.getElementById('loading-screen').style.display = 'none';
+    document.querySelector('header').style.display = 'block';
+    document.getElementById('main-content').style.display = 'block';
+    document.getElementById('footer-placeholder').style.display = 'block';
+    document.body.style.overflow = 'auto'; // Allow scrolling after loading screen
+    loadContent('about.html', 'main-content'); // Load the "About Me" content by default
+    console.log('Loading screen hidden, About Me content loaded.');
 }
 
-// Initialize 3D scene
-function init3DScene() {
-    const canvas = document.getElementById('3d-canvas');
-    const renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
-    renderer.setSize(canvas.clientWidth, canvas.clientHeight);
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, canvas.clientWidth / canvas.clientHeight, 0.1, 1000);
-    camera.position.z = 5;
-
-    const geometry = new THREE.BoxGeometry();
-    const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-    const cube = new THREE.Mesh(geometry, material);
-    scene.add(cube);
-
-    function animate() {
-        requestAnimationFrame(animate);
-        cube.rotation.x += 0.01;
-        cube.rotation.y += 0.01;
-        renderer.render(scene, camera);
-    }
-
-    animate();
+async function init() {
+    await loadHeader();
+    await loadFooter();
+    window.addEventListener('load', () => {
+        setTimeout(showContentAfterLoad, 5000); // 5 seconds
+    });
 }
 
-// Handle the loading screen
-window.addEventListener('load', () => {
-    setTimeout(() => {
-        document.getElementById('loading-screen').style.display = 'none';
-        document.querySelector('header').style.display = 'block';
-        document.getElementById('main-content').style.display = 'block';
-        document.getElementById('footer-placeholder').style.display = 'block';
-        loadContent('about.html'); // Load the "About Me" content by default after loading screen
-        console.log('Loading screen hidden, About Me content loaded.');
-        document.body.style.overflow = 'auto'; // Allow scrolling after loading screen
-    }, 5000); // 5 seconds
-});
+init();
