@@ -4,26 +4,30 @@ document.addEventListener('DOMContentLoaded', function() {
 
 async function loadContent(page, containerId) {
     try {
+        console.log(`Loading ${page} into ${containerId}`);
         const response = await fetch(page);
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
         const text = await response.text();
         document.getElementById(containerId).innerHTML = text;
         document.getElementById(containerId).style.display = 'block';
-        console.log(`${page} content loaded.`);
+        console.log(`${page} content loaded into ${containerId}`);
     } catch (error) {
         console.error(`Error loading ${page}:`, error);
     }
 }
 
 async function loadHeader() {
+    console.log('Loading header...');
     await loadContent('header.html', 'header-placeholder');
 }
 
 async function loadFooter() {
+    console.log('Loading footer...');
     await loadContent('footer.html', 'footer-placeholder');
 }
 
 function showContentAfterLoad() {
+    console.log('Hiding loading screen and displaying content');
     document.getElementById('loading-screen').style.display = 'none';
     document.querySelector('header').style.display = 'block';
     document.getElementById('main-content').style.display = 'block';
@@ -34,6 +38,7 @@ function showContentAfterLoad() {
 }
 
 async function init() {
+    console.log('Initializing...');
     await loadHeader();
     await loadFooter();
     window.addEventListener('load', () => {
