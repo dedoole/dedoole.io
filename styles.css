@@ -8,7 +8,7 @@ body {
 }
 
 #loading-screen {
-    position: fixed; /* Ensure it takes full screen */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -17,7 +17,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000; /* High z-index to stay on top */
+    z-index: 1000;
 }
 
 .square-container {
@@ -47,20 +47,20 @@ body {
 
 /* Hide content initially */
 header, #main-content, #footer-placeholder {
-    display: none; /* Hide initially */
+    display: none;
 }
 
-/* Header (Nav Bar) */
+/* Fixed Header */
 header {
-    position: fixed; /* Fixed position */
-    top: 0; /* Align to the top */
+    position: fixed;
+    top: 0;
     left: 0;
-    width: 100%; /* Full width */
+    width: 100%;
     background: #333;
     color: white;
     padding: 10px 0;
     text-align: center;
-    z-index: 999; /* Ensure it stays on top of other content */
+    z-index: 999;
 }
 
 nav ul {
@@ -71,7 +71,7 @@ nav ul {
     justify-content: right;
     font-size: 20px;
     font-family: 'Oswald', sans-serif;
-    text-transform: uppercase; /* Make the text uppercase */
+    text-transform: uppercase;
 }
 
 nav ul li {
@@ -100,17 +100,17 @@ h2 {
     color: #4CAF50;
 }
 
-/* Footer */
+/* Fixed Footer */
 footer {
-    position: fixed; /* Fixed position */
-    bottom: 0; /* Align to the bottom */
+    position: fixed;
+    bottom: 0;
     left: 0;
-    width: 100%; /* Full width */
+    width: 100%;
     background: #333;
     color: white;
     text-align: center;
     padding: 10px 0;
-    z-index: 999; /* Ensure it stays on top of other content */
+    z-index: 999;
 }
 
 /* Modal styles */
