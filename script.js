@@ -5,15 +5,15 @@ document.addEventListener('DOMContentLoaded', function() {
 // Function to load content dynamically into a specified container
 async function loadContent(page, containerId) {
     try {
-        console.log(`Loading ${page} into ${containerId}`);
+        console.log(`Attempting to load ${page} into ${containerId}`);
         const response = await fetch(page);
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
         const text = await response.text();
         document.getElementById(containerId).innerHTML = text;
         document.getElementById(containerId).style.display = 'block';
-        console.log(`${page} content loaded into ${containerId}`);
+        console.log(`Successfully loaded ${page} into ${containerId}`);
     } catch (error) {
-        console.error(`Error loading ${page}:`, error);
+        console.error(`Error loading ${page} into ${containerId}:`, error);
     }
 }
 
@@ -85,5 +85,4 @@ function init3DScene() {
         renderer.render(scene, camera);
     }
 
-    animate();
-}
+    animate
