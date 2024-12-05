@@ -97,6 +97,13 @@ window.addEventListener('load', () => {
     }, 5000); // 5 seconds
 });
 
+// Initialize footer actions after loading
+        const timeDisplay = document.getElementById("time-display");
+        if (timeDisplay) {
+            updateTime();
+            setInterval(updateTime, 1000); // Update time every second
+        }
+
 // Function to update date and time
 function updateTime() {
     const timeDisplay = document.getElementById("time-display");
