@@ -144,7 +144,7 @@ nav ul li a:hover {
 section {
     padding: 20px;
     margin-top: 110px; /* Adjust for fixed banner and header */
-    background: white;
+    background: #333;;
     text-align: justify; /* Justify content */ }
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
