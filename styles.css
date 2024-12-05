@@ -319,12 +319,15 @@ h2 {
 }
 
 /* Project Icon Styling */
-.project-icon {
+.project-icon img {
     font-size: 3.5rem;
     color: #007bff; /* Primary color */
     margin-bottom: 20px;
     display: flex;
     justify-content: center;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
 }
 
 /* Project Details Styling */
@@ -375,6 +378,7 @@ h2 {
 }
 
 /*************END PROJECTS PAGE STYLE **************/
+
 
 
 /********************FOOTER START**********************************/
