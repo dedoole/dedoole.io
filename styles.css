@@ -97,10 +97,9 @@ header, #main-content, #footer-placeholder {
     border-radius: 30%;
     position: relative;
     z-index: 1;
-    margin-top: 140px;
-    margin-left: -21px;
-    background: url('certified-badge.png') no-repeat center center;
-    background-size: cover;
+    margin-top: 50px;
+    margin-left: 50px;
+   
 }
 
 /* Fixed Header */
