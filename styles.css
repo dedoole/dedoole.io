@@ -20,7 +20,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000; /* High z-index to stay on top */
+    z-index: 1002; /* High z-index to stay on top */
 }
 
 .square-container {
@@ -100,7 +100,7 @@ header, #main-content, #footer-placeholder {
     z-index: 1;
     margin-top: 80px;
     margin-left: 95px;
-    z-index: 1001; /* Ensure photo stays on top */
+    z-index: 1000; /* Ensure photo stays on top */
    
 }
 
@@ -157,12 +157,11 @@ h2 {
 /* Fixed Footer */
 footer {
     position: fixed;
-    top: 40px;
     bottom: 0;
     left: 0;
     width: 100%;
     background: black;
-    color: black;
+    color: white;
     text-align: center;
     padding: 10px 0;
     z-index: 1001;
