@@ -100,7 +100,7 @@ header, #main-content, #footer-placeholder {
     z-index: 1;
     margin-top: 80px;
     margin-left: 95px;
-    z-index: 1000; /* Ensure photo stays on top */
+    z-index: 1001; /* Ensure photo stays on top */
    
 }
 
