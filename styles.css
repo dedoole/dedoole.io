@@ -155,7 +155,7 @@ h2 {
 
 /* Fixed Footer */
 footer {
-    position: fixed;
+    position: relative;
     bottom: 0;
     left: 0;
     width: 100%;
@@ -163,7 +163,7 @@ footer {
     color: white;
     text-align: center;
     padding: 10px 0;
-    z-index: 1001;
+   
 }
 
 /* Modal styles */
