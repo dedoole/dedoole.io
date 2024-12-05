@@ -1,10 +1,11 @@
 body {
     font-family: Arial, sans-serif;
-    margin-top: 80px;
+    margin-top: 60px;
     padding: 0;
     background: #f0f0f0;
     color: #333;
     overflow: hidden; /* Prevent scrolling during loading screen */
+    
    
 }
 
