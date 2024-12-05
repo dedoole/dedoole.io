@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     margin-top: 60px;
-    margin-bottom: 60px;
+    margin-bottom: 0px;
     padding: 0;
     background: #f0f0f0;
     color: #333;
@@ -145,6 +145,7 @@ nav ul li a:hover {
 section {
     padding: 20px;
     margin-top: 90px; /* Adjust for fixed banner and header */
+    margin-bottom: 90px;
     background: #f0f0f0;
     text-align: justify; /* Justify content */ }
     border-radius: 8px;
