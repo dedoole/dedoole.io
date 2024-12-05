@@ -94,8 +94,8 @@ header, #main-content, #footer-placeholder {
     position: fixed;
     width: 35px;
     height: 25px;
-    bottom: 50px; /* Adjust based on your design */
-    right: 5px; /* Adjust based on your design */
+    /*bottom: 50px; /* Adjust based on your design */
+   /* right: 5px; /* Adjust based on your design */
     border-radius: 30%;
     margin-top: 80px;
     margin-left: 95px;
