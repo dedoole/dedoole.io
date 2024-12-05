@@ -145,6 +145,7 @@ section {
     padding: 20px;
     margin-top: 150px; /* Adjust for fixed banner and header */
     background: white;
+    text-align: justify; /* Justify content */ }
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
