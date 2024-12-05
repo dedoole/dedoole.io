@@ -58,7 +58,7 @@ header, #main-content, #footer-placeholder {
     height: 100px;
     overflow: hidden;
     background: linear-gradient(to right, #6a11cb, #2575fc);
-    z-index: 1001;
+    z-index: 999;
 }
 
 #banner-image {
