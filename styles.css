@@ -95,10 +95,10 @@ header, #main-content, #footer-placeholder {
     bottom: 50px; /* Adjust based on your design */
     right: 5px; /* Adjust based on your design */
     border-radius: 30%;
-    position: relative;
-    z-index: 1;
+    position: fixed;
+    z-index: 1001;
     margin-top: 50px;
-    margin-left: 50px;
+    margin-left: 80px;
    
 }
 
