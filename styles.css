@@ -97,10 +97,9 @@ header, #main-content, #footer-placeholder {
     bottom: 50px; /* Adjust based on your design */
     right: 5px; /* Adjust based on your design */
     border-radius: 30%;
-    z-index: 1;
     margin-top: 80px;
     margin-left: 95px;
-    z-index: 1001; /* Ensure photo stays on top */
+    z-index: 1001; /* Ensure badge stays on top */
    
 }
 
