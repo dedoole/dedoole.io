@@ -96,7 +96,7 @@ header, #main-content, #footer-placeholder {
     right: 5px; /* Adjust based on your design */
     border-radius: 30%;
     position: fixed;
-    z-index: 1001;
+    z-index: 1;
     margin-top: 50px;
     margin-left: 80px;
    
