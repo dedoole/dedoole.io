@@ -157,6 +157,7 @@ h2 {
 /* Fixed Footer */
 footer {
     position: fixed;
+    top: 40px;
     bottom: 0;
     left: 0;
     width: 100%;
