@@ -90,7 +90,7 @@ header, #main-content, #footer-placeholder {
 }
 
 #certified-badge {
-    position: relative;
+    position: fixed;
     width: 35px;
     height: 25px;
     bottom: 50px; /* Adjust based on your design */
