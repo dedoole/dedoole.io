@@ -89,13 +89,12 @@ header, #main-content, #footer-placeholder {
 }
 
 #certified-badge {
-    position: absolute;
+    position: fixed;
     width: 35px;
     height: 25px;
     bottom: 50px; /* Adjust based on your design */
     right: 5px; /* Adjust based on your design */
     border-radius: 30%;
-    position: fixed;
     z-index: 1;
     margin-top: 50px;
     margin-left: 100px;
