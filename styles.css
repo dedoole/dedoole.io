@@ -69,7 +69,7 @@ header, #main-content, #footer-placeholder {
 
 /* Profile Photo Area */
 #profile-area {
-    position: fixed;
+    position: relative;
     display: flex;
     align-items: center;
     top: 20px; /* Adjust based on your design */
@@ -83,7 +83,7 @@ header, #main-content, #footer-placeholder {
     border: 3px solid #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: relative;
-    z-index: -1; /* Ensure photo stays on top */
+    z-index: 2; /* Ensure photo stays on top */
 }
 
 #certified-badge {
@@ -104,7 +104,7 @@ header, #main-content, #footer-placeholder {
 /* Fixed Header */
 header {
     position: fixed; /* Position over the banner */
-    top: 70px; /* Adjust to align with the bottom of the banner */
+    top: 60px; /* Adjust to align with the bottom of the banner */
     left: 0;
     width: 100%;
     background: transparent; /* Ensure it's transparent to display over the banner */
