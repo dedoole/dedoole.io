@@ -69,7 +69,7 @@ header, #main-content, #footer-placeholder {
 
 /* Profile Photo Area */
 #profile-area {
-    position: absolute;
+    position: fixed;
     display: flex;
     align-items: center;
     top: 20px; /* Adjust based on your design */
@@ -103,7 +103,7 @@ header, #main-content, #footer-placeholder {
 
 /* Fixed Header */
 header {
-    position: absolute; /* Position over the banner */
+    position: fixed; /* Position over the banner */
     top: 80px; /* Adjust to align with the bottom of the banner */
     left: 0;
     width: 100%;
