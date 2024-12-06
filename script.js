@@ -275,6 +275,11 @@ function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
+function scrollToBottom() {
+    window.scrollTo({ bottom: 0, behavior: 'smooth' });
+}
+
+
 function captureScreenshot() {
     html2canvas(document.body).then(canvas => {
         const link = document.createElement('a');
