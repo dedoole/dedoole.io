@@ -256,6 +256,37 @@ function clearCookies() {
         elem.style.transition = '';
     });
 }
+function toggleNightMode() {
+    document.body.classList.toggle('night-mode');
+}
+
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function captureScreenshot() {
+    html2canvas(document.body).then(canvas => {
+        const link = document.createElement('a');
+        link.download = 'screenshot.png';
+        link.href = canvas.toDataURL();
+        link.click();
+    });
+}
+
+function increaseBrightness() {
+    if (brightnessLevel < 1.25) {
+        brightnessLevel += 0.25;
+    }
+    document.body.style.filter = `brightness(${brightnessLevel})`;
+}
+
+function decreaseBrightness() {
+    if (brightnessLevel > 0.75) {
+        brightnessLevel -= 0.25;
+    }
+    document.body.style.filter = `brightness(${brightnessLevel})`;
+}
+
 
 
 //END SCREEN ASSISTANT
