@@ -167,8 +167,8 @@ document.addEventListener('click', function (event) {
 
 // START SCREEN ASSISTANT 
 
-// Initial zoom percentage
-let zoomPercentage = 100;
+// Initial font size percentage
+let fontSizePercentage = 100;
 
 function toggleAssistantMenu() {
     const menu = document.getElementById('assistantMenu');
@@ -180,23 +180,21 @@ function toggleAssistantMenu() {
 }
 
 function updateZoomDisplay() {
-    document.getElementById('zoomPercentage').innerText = zoomPercentage + '%';
+    document.getElementById('zoomPercentage').innerText = fontSizePercentage + '%';
 }
 
 function zoomIn() {
-    if (zoomPercentage < 500) {
-        zoomPercentage += 25;
-        document.body.style.transform = `scale(${zoomPercentage / 100})`;
-        document.body.style.transformOrigin = '0 0'; /* Keeps the zoom centered */
+    if (fontSizePercentage < 500) {
+        fontSizePercentage += 25;
+        document.body.style.fontSize = fontSizePercentage + '%';
         updateZoomDisplay();
     }
 }
 
 function zoomOut() {
-    if (zoomPercentage > 25) {
-        zoomPercentage -= 25;
-        document.body.style.transform = `scale(${zoomPercentage / 100})`;
-        document.body.style.transformOrigin = '0 0'; /* Keeps the zoom centered */
+    if (fontSizePercentage > 25) {
+        fontSizePercentage -= 25;
+        document.body.style.fontSize = fontSizePercentage + '%';
         updateZoomDisplay();
     }
 }
@@ -240,8 +238,8 @@ function clearCookies() {
     alert('Cookies cleared and settings reset!');
 
     // Reset all adjustments made by the assistant
-    document.body.style.transform = 'scale(1)';
-    zoomPercentage = 100;
+    document.body.style.fontSize = '100%';
+    fontSizePercentage = 100;
     updateZoomDisplay();
     document.body.style.fontFamily = '';
     const links = document.querySelectorAll('a');
