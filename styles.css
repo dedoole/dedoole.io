@@ -492,8 +492,8 @@ footer {
 /* Initial State */
 .screen-assistant img {
     position: fixed;
-    bottom: 3px;
-    right: -15px;
+    bottom: 5px;
+    right: -10px;
     width: 50px;
     height: 50px;
     cursor: pointer;
@@ -503,8 +503,8 @@ footer {
 .assistant-menu {
     display: none;
     position: fixed;
-    bottom: 48px;
-    right: 8px;
+    bottom: 55px;
+    right: 10px;
     background: auto;
     border: 1px solid #ccc;
     border-radius: 10px;
