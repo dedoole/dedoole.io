@@ -7,9 +7,7 @@ body {
     color: #333;
     overflow: hidden; /* Prevent scrolling during loading screen */
     font-size: 22px; /* Increase font size */
-    overflow-x: hidden;
-    
-   
+    overflow-x: hidden;   
 }
 
 #loading-screen {
@@ -615,23 +613,6 @@ input:checked + .slider:before {
     background-image: url('moon-icon.png'); /* Add your moon icon image here */
 }
 
-/* Assistant Menu Adaptation for Light and Dark Modes */
-.night-mode .assistant-menu {
-    background: #333; /* Dark background for night mode */
-    color: #fff;      /* Light text for night mode */
-}
-
-.assistant-menu {
-    background: #fff; /* Light background for day mode */
-    color: #000;      /* Dark text for day mode */
-}
-
-
-/* Greyscale Images */
-img.greyscale {
-    filter: grayscale(100%);
-}
-
 /* START BRIGHTNESS */
 
 /* Ensure the page content doesn't overflow horizontally */
@@ -689,6 +670,10 @@ input[type="range"]::-moz-range-thumb {
 }
 
 /* END BRIGHTNESS */
+/* Greyscale Images */
+img.greyscale {
+    filter: grayscale(100%);
+}
 
 
 /**********************END SCREEN ASSISTANT *****************/
