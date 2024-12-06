@@ -257,5 +257,4 @@ function clearCookies() {
     });
 }
 
-
 //END SCREEN ASSISTANT
