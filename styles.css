@@ -527,13 +527,17 @@ footer {
 
 .assistant-menu ul li {
     padding: 10px;
-    cursor: pointer;
     display: flex;
     justify-content: space-between;
 }
 
 .assistant-menu ul li span {
     margin: 0 5px;
+}
+
+/* Zoom controls cursor */
+.zoom-control {
+    cursor: pointer;
 }
 
 .assistant-menu ul li:hover {
