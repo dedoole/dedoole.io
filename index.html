@@ -48,6 +48,27 @@
     <img src="photo.jpg" alt="Profile Photo" id="profile-photo">
     <img src="Verified.png" alt="Certified Badge" id="certified-badge" title="Verified Account">
   </div>
+  
+<!-- Start Screen Assistant -->
+<!-- Initial State -->
+<div class="screen-assistant">
+    <img src="assistant-icon.png" alt="Screen Assistant" onclick="toggleAssistantMenu()">
+</div>
+
+<!-- Expanded State -->
+<div class="assistant-menu" id="assistantMenu">
+    <ul>
+        <li onclick="increaseFontSize()">Increase Font Size</li>
+        <li onclick="decreaseFontSize()">Decrease Font Size</li>
+        <li onclick="highlightLinks()">Highlight Links</li>
+        <li onclick="toggleDarkMode()">Dark Mode</li>
+        <li onclick="adjustContrast()">Adjust Contrast</li>
+        <li onclick="enableVoiceCommands()">Voice Commands</li>
+        <li onclick="textToSpeech()">Text-to-Speech</li>
+    </ul>
+</div>
+<!-- End Screen Assistant -->
+  
 
   <!-- Header Placeholder -->
   <div id="header-placeholder"></div>
