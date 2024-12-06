@@ -167,6 +167,9 @@ document.addEventListener('click', function (event) {
 
 // START SCREEN ASSISTANT 
 
+// Initial font size percentage
+let fontSizePercentage = 100;
+
 function toggleAssistantMenu() {
     const menu = document.getElementById('assistantMenu');
     if (menu.style.display === 'none' || menu.style.display === '') {
@@ -177,15 +180,22 @@ function toggleAssistantMenu() {
 }
 
 function increaseFontSize() {
-    document.body.style.fontSize = 'larger';
+    if (fontSizePercentage < 100) {
+        fontSizePercentage += 25;
+        document.body.style.fontSize = fontSizePercentage + '%';
+    }
 }
 
 function decreaseFontSize() {
-    document.body.style.fontSize = 'smaller';
+    if (fontSizePercentage > 25) {
+        fontSizePercentage -= 25;
+        document.body.style.fontSize = fontSizePercentage + '%';
+    }
 }
 
 function toggleReadableFont() {
-    document.body.style.fontFamily = 'Arial, sans-serif';
+    const currentFont = document.body.style.fontFamily;
+    document.body.style.fontFamily = (currentFont === 'Arial, sans-serif') ? '' : 'Arial, sans-serif';
 }
 
 function toggleUnderlineLinks() {
@@ -198,11 +208,8 @@ function highlightLinks() {
     links.forEach(link => link.style.backgroundColor = 'yellow');
 }
 
-function clearCookies() {
-    document.cookie.split(";").forEach(function(c) {
-        document.cookie = c.split("=")[0] + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT';
-    });
-    alert('Cookies cleared!');
+function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
 }
 
 function toggleGreyscale() {
@@ -215,6 +222,31 @@ function removeAnimations() {
     animatedElements.forEach(elem => {
         elem.style.animation = 'none';
         elem.style.transition = 'none';
+    });
+}
+
+function clearCookies() {
+    document.cookie.split(";").forEach(function(c) {
+        document.cookie = c.split("=")[0] + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT';
+    });
+    alert('Cookies cleared and settings reset!');
+
+    // Reset all adjustments made by the assistant
+    document.body.style.fontSize = '100%';
+    fontSizePercentage = 100;
+    document.body.style.fontFamily = '';
+    const links = document.querySelectorAll('a');
+    links.forEach(link => {
+        link.style.textDecoration = 'none';
+        link.style.backgroundColor = '';
+    });
+    document.body.classList.remove('dark-mode');
+    const images = document.querySelectorAll('img');
+    images.forEach(img => img.classList.remove('greyscale'));
+    const animatedElements = document.querySelectorAll('*');
+    animatedElements.forEach(elem => {
+        elem.style.animation = '';
+        elem.style.transition = '';
     });
 }
 
