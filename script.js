@@ -220,7 +220,6 @@ function highlightLinks() {
     });
 }
 
-
 function toggleDarkMode() {
     document.body.classList.toggle('dark-mode');
 }
@@ -270,7 +269,6 @@ function toggleNightMode() {
     assistantMenu.classList.toggle('night-mode');
 }
 
-
 let scrollPosition = 'top';
 
 function toggleScroll() {
@@ -282,8 +280,6 @@ function toggleScroll() {
         scrollPosition = 'top';
     }
 }
-
-
 function captureScreenshot() {
     html2canvas(document.body).then(canvas => {
         const link = document.createElement('a');
@@ -294,7 +290,10 @@ function captureScreenshot() {
 }
 
 
-
-
+function updateBrightness(value) { 
+    const content = document.querySelector('.page-content'); 
+    if (content) { content.style.filter = `brightness(${value})`;
+  } 
+}
 
 //END SCREEN ASSISTANT
