@@ -256,9 +256,13 @@ function clearCookies() {
         elem.style.transition = '';
     });
 }
+
 function toggleNightMode() {
     document.body.classList.toggle('night-mode');
+    const assistantMenu = document.getElementById('assistantMenu');
+    assistantMenu.classList.toggle('night-mode');
 }
+
 
 function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
