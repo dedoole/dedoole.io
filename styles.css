@@ -670,6 +670,7 @@ input[type="range"]::-moz-range-thumb {
 }
 
 /* END BRIGHTNESS */
+
 /* Greyscale Images */
 img.greyscale {
     filter: grayscale(100%);
