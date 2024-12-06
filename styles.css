@@ -505,7 +505,7 @@ footer {
     position: fixed;
     bottom: 80px;
     right: 20px;
-    background: white;
+    background: black;
     border: 1px solid #ccc;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -543,9 +543,6 @@ footer {
 img.greyscale {
     filter: grayscale(100%);
 }
-.dark-mode {
-    background-color: #121212;
-    color: #ffffff;
-}
+
 
 /**********************END SCREEN ASSISTANT *****************/
