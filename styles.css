@@ -556,8 +556,8 @@ footer {
     background: #f0f0f0;
 }
 
-/* Dark Mode */
-.dark-mode {
+/* Night Mode */
+.night-mode {
     background-color: #121212;
     color: #ffffff;
 }
@@ -565,6 +565,19 @@ footer {
 /* Greyscale Images */
 img.greyscale {
     filter: grayscale(100%);
+}
+
+/* Additional styles for brightness adjustment */
+.brightness-low {
+    filter: brightness(0.75);
+}
+
+.brightness-medium {
+    filter: brightness(1);
+}
+
+.brightness-high {
+    filter: brightness(1.25);
 }
 
 /**********************END SCREEN ASSISTANT *****************/
