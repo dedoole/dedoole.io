@@ -50,15 +50,15 @@ async function loadFooter() {
 loadFooter();
 
 // Function to show the contact form modal
-function showContactForm() {
-    document.getElementById('contact-modal').style.display = 'flex';
-    init3DScene();
+
+function openContactForm() {
+    document.getElementById('contact-form-section').style.display = 'block';
 }
 
-// Function to close the contact form modal
 function closeContactForm() {
-    document.getElementById('contact-modal').style.display = 'none';
+    document.getElementById('contact-form-section').style.display = 'none';
 }
+
 
 // Initialize 3D scene
 function init3DScene() {
