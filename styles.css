@@ -508,7 +508,6 @@ footer {
     background: black;
     border: 1px solid #ccc;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 10px;
     z-index: 1000;
     
@@ -517,6 +516,7 @@ footer {
 .assistant-header {
     display: flex;
     justify-content: flex-end;
+    color: white;
 }
 
 .assistant-menu ul {
