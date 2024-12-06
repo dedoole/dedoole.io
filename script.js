@@ -164,3 +164,44 @@ document.addEventListener('click', function (event) {
         closeNav();
     }
 });
+
+// START SCREEN ASSISTANT 
+
+function toggleAssistantMenu() {
+    const menu = document.getElementById('assistantMenu');
+    if (menu.style.display === 'none' || menu.style.display === '') {
+        menu.style.display = 'block';
+    } else {
+        menu.style.display = 'none';
+    }
+}
+
+function increaseFontSize() {
+    document.body.style.fontSize = 'larger';
+}
+
+function decreaseFontSize() {
+    document.body.style.fontSize = 'smaller';
+}
+
+function highlightLinks() {
+    const links = document.querySelectorAll('a');
+    links.forEach(link => link.style.backgroundColor = 'yellow');
+}
+
+function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+}
+
+function adjustContrast() {
+    // Implement contrast adjustment logic
+}
+
+function enableVoiceCommands() {
+    // Implement voice command functionality
+}
+
+function textToSpeech() {
+    // Implement text-to-speech functionality
+}
+//END SCREEN ASSISTANT
