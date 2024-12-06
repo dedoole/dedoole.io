@@ -168,6 +168,7 @@ document.addEventListener('click', function (event) {
 // START SCREEN ASSISTANT 
 
 // Initial zoom percentage
+// Initial zoom percentage
 let zoomPercentage = 100;
 
 function toggleAssistantMenu() {
@@ -186,7 +187,7 @@ function updateZoomDisplay() {
 function zoomIn() {
     if (zoomPercentage < 500) {
         zoomPercentage += 25;
-        document.body.style.zoom = zoomPercentage + '%';
+        document.documentElement.style.transform = `scale(${zoomPercentage / 100})`;
         updateZoomDisplay();
     }
 }
@@ -194,7 +195,7 @@ function zoomIn() {
 function zoomOut() {
     if (zoomPercentage > 25) {
         zoomPercentage -= 25;
-        document.body.style.zoom = zoomPercentage + '%';
+        document.documentElement.style.transform = `scale(${zoomPercentage / 100})`;
         updateZoomDisplay();
     }
 }
@@ -238,7 +239,7 @@ function clearCookies() {
     alert('Cookies cleared and settings reset!');
 
     // Reset all adjustments made by the assistant
-    document.body.style.zoom = '100%';
+    document.documentElement.style.transform = 'scale(1)';
     zoomPercentage = 100;
     updateZoomDisplay();
     document.body.style.fontFamily = '';
@@ -256,6 +257,5 @@ function clearCookies() {
         elem.style.transition = '';
     });
 }
-
 
 //END SCREEN ASSISTANT
