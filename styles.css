@@ -492,7 +492,7 @@ footer {
 /* Initial State */
 .screen-assistant img {
     position: fixed;
-    bottom: 2px;
+    bottom: 1px;
     right: 1px;
     width: 50px;
     height: 50px;
@@ -503,7 +503,7 @@ footer {
 .assistant-menu {
     display: none;
     position: fixed;
-    bottom: 15px;
+    bottom: 30px;
     right: 8px;
     background: auto;
     border: 1px solid #ccc;
@@ -591,8 +591,8 @@ footer {
 .slider:before {
     position: absolute;
     content: "";
-    height: 26px;
-    width: 26px;
+    height: 20px;
+    width: 20px;
     left: 4px;
     bottom: 4px;
     background-color: white;
