@@ -167,8 +167,8 @@ document.addEventListener('click', function (event) {
 
 // START SCREEN ASSISTANT 
 
-// Initial font size percentage
-let fontSizePercentage = 100;
+// Initial zoom percentage
+let zoomPercentage = 100;
 
 function toggleAssistantMenu() {
     const menu = document.getElementById('assistantMenu');
@@ -179,17 +179,23 @@ function toggleAssistantMenu() {
     }
 }
 
-function increaseFontSize() {
-    if (fontSizePercentage < 100) {
-        fontSizePercentage += 25;
-        document.body.style.fontSize = fontSizePercentage + '%';
+function updateZoomDisplay() {
+    document.getElementById('zoomPercentage').innerText = zoomPercentage + '%';
+}
+
+function zoomIn() {
+    if (zoomPercentage < 500) {
+        zoomPercentage += 25;
+        document.body.style.zoom = zoomPercentage + '%';
+        updateZoomDisplay();
     }
 }
 
-function decreaseFontSize() {
-    if (fontSizePercentage > 25) {
-        fontSizePercentage -= 25;
-        document.body.style.fontSize = fontSizePercentage + '%';
+function zoomOut() {
+    if (zoomPercentage > 25) {
+        zoomPercentage -= 25;
+        document.body.style.zoom = zoomPercentage + '%';
+        updateZoomDisplay();
     }
 }
 
@@ -232,8 +238,9 @@ function clearCookies() {
     alert('Cookies cleared and settings reset!');
 
     // Reset all adjustments made by the assistant
-    document.body.style.fontSize = '100%';
-    fontSizePercentage = 100;
+    document.body.style.zoom = '100%';
+    zoomPercentage = 100;
+    updateZoomDisplay();
     document.body.style.fontFamily = '';
     const links = document.querySelectorAll('a');
     links.forEach(link => {
@@ -249,5 +256,6 @@ function clearCookies() {
         elem.style.transition = '';
     });
 }
+
 
 //END SCREEN ASSISTANT
