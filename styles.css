@@ -511,7 +511,7 @@ footer {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 10px;
     z-index: 1000;
-    zoom: 1; /* Keep the assistant menu zoom level at 1 */
+    transform: scale(1);
 }
 
 .assistant-header {
