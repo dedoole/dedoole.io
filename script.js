@@ -295,6 +295,7 @@ function captureScreenshot() {
 
 function updateBrightness(value) {
     document.body.style.filter = `brightness(${value})`;
+    document.body.classList.add('adjust-brightness');
 }
 
 
