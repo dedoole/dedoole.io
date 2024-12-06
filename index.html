@@ -51,22 +51,27 @@
   
 <!-- Start Screen Assistant -->
 <!-- Initial State -->
-<div class="screen-assistant">
+<div class="screen-assistant" id="screenAssistant">
     <img src="assistant-icon.png" alt="Screen Assistant" onclick="toggleAssistantMenu()">
 </div>
 
 <!-- Expanded State -->
 <div class="assistant-menu" id="assistantMenu">
+    <div class="assistant-header">
+        <button onclick="toggleAssistantMenu()">Close</button>
+    </div>
     <ul>
-        <li onclick="increaseFontSize()">Increase Font Size</li>
-        <li onclick="decreaseFontSize()">Decrease Font Size</li>
+        <li onclick="decreaseFontSize()">A-</li>
+        <li onclick="increaseFontSize()">A+</li>
+        <li onclick="toggleReadableFont()">Readable Font</li>
+        <li onclick="toggleUnderlineLinks()">Underline Links</li>
         <li onclick="highlightLinks()">Highlight Links</li>
-        <li onclick="toggleDarkMode()">Dark Mode</li>
-        <li onclick="adjustContrast()">Adjust Contrast</li>
-        <li onclick="enableVoiceCommands()">Voice Commands</li>
-        <li onclick="textToSpeech()">Text-to-Speech</li>
+        <li onclick="clearCookies()">Clear Cookies</li>
+        <li onclick="toggleGreyscale()">Greyscale Images</li>
+        <li onclick="removeAnimations()">Remove Animations</li>
     </ul>
 </div>
+
 <!-- End Screen Assistant -->
   
 
