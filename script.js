@@ -293,18 +293,8 @@ function captureScreenshot() {
     });
 }
 
-function increaseBrightness() {
-    if (brightnessLevel < 1.25) {
-        brightnessLevel += 0.25;
-    }
-    document.body.style.filter = `brightness(${brightnessLevel})`;
-}
-
-function decreaseBrightness() {
-    if (brightnessLevel > 0.75) {
-        brightnessLevel -= 0.25;
-    }
-    document.body.style.filter = `brightness(${brightnessLevel})`;
+function updateBrightness(value) {
+    document.body.style.filter = `brightness(${value})`;
 }
 
 
