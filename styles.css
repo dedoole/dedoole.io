@@ -497,6 +497,7 @@ footer {
     width: 50px;
     height: 50px;
     cursor: pointer;
+    background: blue;
 }
 
 /* Expanded State */
@@ -517,7 +518,7 @@ footer {
 .assistant-header {
     display: flex;
     justify-content: flex-end;
-    color: white;
+
 }
 
 .assistant-menu ul {
@@ -532,7 +533,7 @@ footer {
 }
 
 .assistant-menu ul li:hover {
-    background: white;
+    background: orange;
 }
 
 /* Dark Mode */
