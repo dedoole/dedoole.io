@@ -184,24 +184,38 @@ function decreaseFontSize() {
     document.body.style.fontSize = 'smaller';
 }
 
+function toggleReadableFont() {
+    document.body.style.fontFamily = 'Arial, sans-serif';
+}
+
+function toggleUnderlineLinks() {
+    const links = document.querySelectorAll('a');
+    links.forEach(link => link.style.textDecoration = link.style.textDecoration === 'underline' ? 'none' : 'underline');
+}
+
 function highlightLinks() {
     const links = document.querySelectorAll('a');
     links.forEach(link => link.style.backgroundColor = 'yellow');
 }
 
-function toggleDarkMode() {
-    document.body.classList.toggle('dark-mode');
+function clearCookies() {
+    document.cookie.split(";").forEach(function(c) {
+        document.cookie = c.split("=")[0] + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT';
+    });
+    alert('Cookies cleared!');
 }
 
-function adjustContrast() {
-    // Implement contrast adjustment logic
+function toggleGreyscale() {
+    const images = document.querySelectorAll('img');
+    images.forEach(img => img.classList.toggle('greyscale'));
 }
 
-function enableVoiceCommands() {
-    // Implement voice command functionality
+function removeAnimations() {
+    const animatedElements = document.querySelectorAll('*');
+    animatedElements.forEach(elem => {
+        elem.style.animation = 'none';
+        elem.style.transition = 'none';
+    });
 }
 
-function textToSpeech() {
-    // Implement text-to-speech functionality
-}
 //END SCREEN ASSISTANT
