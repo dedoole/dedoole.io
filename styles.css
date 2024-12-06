@@ -580,4 +580,15 @@ img.greyscale {
     filter: brightness(1.25);
 }
 
+/* Assistant Menu Adaptation for Light and Dark Modes */
+.night-mode .assistant-menu {
+    background: #333; /* Dark background for night mode */
+    color: #fff;      /* Light text for night mode */
+}
+
+.assistant-menu {
+    background: #fff; /* Light background for day mode */
+    color: #000;      /* Dark text for day mode */
+}
+
 /**********************END SCREEN ASSISTANT *****************/
