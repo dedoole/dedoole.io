@@ -538,6 +538,11 @@ footer {
 /* Zoom controls cursor */
 .zoom-control {
     cursor: pointer;
+    margin: 5px;
+}
+
+.zoom-control:hover {
+    background: #f0f0f0;
 }
 
 .assistant-menu ul li:hover {
