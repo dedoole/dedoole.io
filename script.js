@@ -281,14 +281,16 @@ function toggleScroll() {
     }
 }
 function captureScreenshot() {
-    html2canvas(document.body).then(canvas => {
+    const content = document.querySelector('.page-content');
+    html2canvas(content).then(canvas => {
         const link = document.createElement('a');
         link.download = 'screenshot.png';
         link.href = canvas.toDataURL();
         link.click();
+    }).catch(err => {
+        console.error('Screenshot capture failed:', err);
     });
 }
-
 
 function updateBrightness(value) { 
     const content = document.querySelector('.page-content'); 
