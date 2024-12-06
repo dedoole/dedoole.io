@@ -529,16 +529,18 @@ footer {
     padding: 10px;
     display: flex;
     justify-content: space-between;
+    cursor: pointer;
 }
 
 .assistant-menu ul li span {
     margin: 0 5px;
+    
 }
 
 /* Zoom controls cursor */
 .zoom-control {
     cursor: pointer;
-    margin: 5px;
+     margin: 10px;
 }
 
 .zoom-control:hover {
