@@ -492,8 +492,8 @@ footer {
 /* Initial State */
 .screen-assistant img {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 15px;
+    right: 10px;
     width: 50px;
     height: 50px;
     cursor: pointer;
@@ -503,8 +503,8 @@ footer {
 .assistant-menu {
     display: none;
     position: fixed;
-    bottom: 80px;
-    right: 20px;
+    bottom: 60px;
+    right: 15px;
     background: auto;
     border: 1px solid #ccc;
     border-radius: 10px;
@@ -566,8 +566,8 @@ footer {
 .switch {
     position: relative;
     display: inline-block;
-    width: 60px;
-    height: 34px;
+    width: 40px;
+    height: 25px;
 }
 
 .switch input {
