@@ -503,8 +503,8 @@ footer {
 .assistant-menu {
     display: none;
     position: fixed;
-    bottom: 60px;
-    right: 15px;
+    bottom: 10px;
+    right: 40px;
     background: auto;
     border: 1px solid #ccc;
     border-radius: 10px;
