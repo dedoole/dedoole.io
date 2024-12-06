@@ -632,7 +632,12 @@ img.greyscale {
     filter: grayscale(100%);
 }
 
+/* START BRIGHTNESS */
 
+/* Ensure the page content doesn't overflow horizontally */
+body, .page-content {
+    overflow-x: hidden;
+}
 
 /* Adjust the brightness slider */
 input[type="range"] {
@@ -667,12 +672,6 @@ input[type="range"]::-moz-range-thumb {
     border-radius: 50%;
 }
 
-/* Maintain page layout when adjusting brightness */
-body.adjust-brightness {
-    transform: none;
-    overflow-x: hidden;
-}
-
 /* Night Mode */
 .night-mode .assistant-menu {
     background: #333; /* Dark background for night mode */
@@ -684,16 +683,12 @@ body.adjust-brightness {
     color: #000;      /* Dark text for day mode */
 }
 
-
-/* Assistant Menu Adaptation for Light and Dark Modes */
-.night-mode .assistant-menu {
-    background: #333; /* Dark background for night mode */
-    color: #fff;      /* Light text for night mode */
+/* Maintain page layout when adjusting brightness */
+.page-content {
+    filter: brightness(1);
 }
 
-.assistant-menu {
-    background: #fff; /* Light background for day mode */
-    color: #000;      /* Dark text for day mode */
-}
+/* END BRIGHTNESS */
+
 
 /**********************END SCREEN ASSISTANT *****************/
