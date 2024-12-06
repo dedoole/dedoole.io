@@ -562,6 +562,70 @@ footer {
     color: #ffffff;
 }
 
+/* Toggle Switch */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+/* Sun and Moon Icons */
+.slider.round:before {
+    background-image: url('sun-icon.png'); /* Add your sun icon image here */
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+    background-image: url('moon-icon.png'); /* Add your moon icon image here */
+}
+
+/* Assistant Menu Adaptation for Light and Dark Modes */
+.night-mode .assistant-menu {
+    background: #333; /* Dark background for night mode */
+    color: #fff;      /* Light text for night mode */
+}
+
+.assistant-menu {
+    background: #fff; /* Light background for day mode */
+    color: #000;      /* Dark text for day mode */
+}
+
+
 /* Greyscale Images */
 img.greyscale {
     filter: grayscale(100%);
