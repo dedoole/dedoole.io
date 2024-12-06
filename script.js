@@ -94,7 +94,7 @@ window.addEventListener('load', () => {
         loadContent('about.html'); // Load the "About Me" content by default after loading screen
         console.log('Loading screen hidden, About Me content loaded.');
         document.body.style.overflow = 'auto'; // Allow scrolling after loading screen
-    }, 5000); // 5 seconds
+    }, 2000); // 5 seconds
 });
 
 // Initialize footer actions after loading
