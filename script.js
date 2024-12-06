@@ -271,12 +271,16 @@ function toggleNightMode() {
 }
 
 
-function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-}
+let scrollPosition = 'top';
 
-function scrollToBottom() {
-    window.scrollTo({ bottom: 0, behavior: 'smooth' });
+function toggleScroll() {
+    if (scrollPosition === 'top') {
+        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+        scrollPosition = 'bottom';
+    } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        scrollPosition = 'top';
+    }
 }
 
 
