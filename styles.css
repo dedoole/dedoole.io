@@ -197,6 +197,38 @@ h2 {
     cursor: pointer;
 }
 
+/******************** START CONTACT STYLE **********************/
+
+.contact-form label {
+    display: block;
+    margin: 5px 0 5px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 5px;
+    margin: 5px 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-form button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.contact-form button:hover {
+    background-color: #45a049;
+}
+
+/***** END CONTACT STYLE *****/
+
 /* Responsive Styles */
 @media (max-width: 1200px) {
     nav ul {
@@ -245,10 +277,6 @@ h2 {
     .modal-content {
         margin: 20% auto;
         padding: 15px;
-    }
-
-    .contact-form button {
-        width: 100%;
     }
 
     section {
@@ -348,13 +376,6 @@ h2 {
 }
 
 /*****END PROJECTS PAGE STYLE *****/
-
-/******************** START CONTACT STYLE **********************/
-
-
-
-/***** END CONTACT STYLE *****/
-
 
 /********************FOOTER START**********************************/
 /* Footer Section */
