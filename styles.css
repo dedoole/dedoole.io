@@ -209,7 +209,7 @@ h2 {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
+    z-index: 1001;
     display: none; /* Hidden by default */
 }
 
@@ -267,7 +267,6 @@ h2 {
 .contact-form button:hover {
     background-color: #45a049;
 }
-
 
 /***** END CONTACT STYLE *****/
 
@@ -486,46 +485,8 @@ footer {
     object-fit: cover; /* Ensure the image fits within the circle */
 }
 
-/* Time Display in Button */
-.time-button {
-    background-color:  #545655;
-    color: white;
-    border: none;
-    border-radius: 20px;
-    padding: 5px 10px;
-    font-size: 18px;
-    font-weight: bold;
-    text-align: center;
-    margin-right: 50px;
-}
-
-/* Search Suggestions Popup */
-.search-suggestions {
-    position: absolute;
-    bottom: 50px; /* Position the suggestions just above the footer */
-    left: 0;
-    width: 100%;
-    background-color: white;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    max-height: 200px;
-    overflow-y: auto;
-    display: none; /* Hidden by default */
-    z-index: 1001; /* Ensure it's above the footer */
-}
-
-.search-suggestions div {
-    padding: 10px;
-    cursor: pointer;
-    font-size: 14px;
-    color: #333;
-}
-
-.search-suggestions div:hover {
-    background-color: #f1f1f1;
-}
-
 /***** END FOOTER *****/
+
 /**********************START SCREEN ASSISTANT *****************/
 /* Initial State */
 .screen-assistant img {
