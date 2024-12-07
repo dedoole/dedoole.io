@@ -50,12 +50,15 @@ async function loadFooter() {
 loadFooter();
 
 // Function to show the contact form modal
+function showContactForm() {
+    document.getElementById('contact-modal').style.display = 'flex';
+    init3DScene();
+}
 
-
-
-
-
-
+// Function to close the contact form modal
+function closeContactForm() {
+    document.getElementById('contact-modal').style.display = 'none';
+}
 
 // Handle the loading screen
 window.addEventListener('load', () => {
