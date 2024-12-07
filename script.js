@@ -104,16 +104,7 @@ window.addEventListener('load', () => {
             setInterval(updateTime, 1000); // Update time every second
         }
 
-// Function to update date and time
-function updateTime() {
-    const timeDisplay = document.getElementById("time-display");
-    if (timeDisplay) {
-        const now = new Date();
-        const dateString = now.toLocaleDateString();
-        const timeString = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
-        timeDisplay.textContent = `${dateString} ${timeString}`;
-    }
-}
+
 
 // Search functionality
 const searchData = [
