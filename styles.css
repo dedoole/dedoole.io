@@ -199,35 +199,75 @@ h2 {
 
 /******************** START CONTACT STYLE **********************/
 
-.contact-form label {
-    display: block;
-    margin: 5px 0 5px;
+/* Contact Form Popup Styles */
+#contact-form-section {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     z-index: 1000;
-    
+    display: none; /* Hidden by default */
+}
+
+.contact-form-container {
+    background-image: url('form-background.jpg'); /* Add your background image */
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.contact-form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact-form-logo {
+    width: 50px; /* Adjust size as needed */
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    margin: 10px 0 5px;
 }
 
 .contact-form input,
 .contact-form textarea {
-    width: 100%;
-    padding: 5px;
-    margin: 5px 0 10px;
+    padding: 10px;
+    margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
 .contact-form button {
+    padding: 10px;
     background-color: #4CAF50;
     color: white;
-    padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
 }
 
 .contact-form button:hover {
     background-color: #45a049;
 }
+
 
 /***** END CONTACT STYLE *****/
 
