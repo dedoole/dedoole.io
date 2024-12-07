@@ -35,6 +35,21 @@ async function loadHeader() {
 }
 loadHeader();
 
+
+// Function to show a specific section
+function showSection(sectionId) {
+    const sections = document.querySelectorAll('.content');
+    sections.forEach(section => {
+        section.style.display = 'none';
+    });
+
+    const section = document.getElementById(sectionId);
+    if (section) {
+        section.style.display = 'block';
+    }
+}
+
+
 // Function to load footer.html
 async function loadFooter() {
     try {
