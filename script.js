@@ -51,13 +51,11 @@ loadFooter();
 
 // Function to show the contact form modal
 
-function openContactForm() {
-    document.getElementById('contact-form-section').style.display = 'block';
-}
 
-function closeContactForm() {
-    document.getElementById('contact-form-section').style.display = 'none';
-}
+
+
+
+
 
 // Handle the loading screen
 window.addEventListener('load', () => {
