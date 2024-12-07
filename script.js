@@ -59,31 +59,6 @@ function closeContactForm() {
     document.getElementById('contact-form-section').style.display = 'none';
 }
 
-
-// Initialize 3D scene
-function init3DScene() {
-    const canvas = document.getElementById('3d-canvas');
-    const renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
-    renderer.setSize(canvas.clientWidth, canvas.clientHeight);
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, canvas.clientWidth / canvas.clientHeight, 0.1, 1000);
-    camera.position.z = 5;
-
-    const geometry = new THREE.BoxGeometry();
-    const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-    const cube = new THREE.Mesh(geometry, material);
-    scene.add(cube);
-
-    function animate() {
-        requestAnimationFrame(animate);
-        cube.rotation.x += 0.01;
-        cube.rotation.y += 0.01;
-        renderer.render(scene, camera);
-    }
-
-    animate();
-}
-
 // Handle the loading screen
 window.addEventListener('load', () => {
     setTimeout(() => {
@@ -97,64 +72,6 @@ window.addEventListener('load', () => {
     }, 2000); // 5 seconds
 });
 
-// Initialize footer actions after loading
-        const timeDisplay = document.getElementById("time-display");
-        if (timeDisplay) {
-            updateTime();
-            setInterval(updateTime, 1000); // Update time every second
-        }
-
-
-
-// Search functionality
-const searchData = [
-    { title: "UEFA Champions League Dashboard", page: "uefa", keywords: ["football", "UEFA", "dashboard", "analysis", "champions"] },
-    { title: "Netflix Data Analysis", page: "netflix", keywords: ["Netflix", "data analysis", "SQL", "Python"] },
-    { title: "IoT Embedded Systems", page: "iot", keywords: ["IoT", "embedded systems", "devices", "data collection"] },
-    { title: "AI-Powered Fraud Detection", page: "fraud", keywords: ["fraud detection", "AI", "machine learning"] },
-    { title: "Supply Chain Management Dashboard", page: "supply-chain", keywords: ["supply chain", "Power BI", "inventory", "dashboard"] },
-    { title: "AI-Based Predictive Maintenance", page: "predictive-maintenance", keywords: ["AI", "predictive maintenance", "machine learning"] }
-];
-
-// Show search suggestions based on input
-function showSuggestions(value) {
-    const suggestionsBox = document.getElementById('search-suggestions');
-    suggestionsBox.innerHTML = ''; // Clear previous suggestions
-    const results = value.length === 0
-        ? searchData // Show all suggestions if input is empty
-        : searchData.filter(item => item.keywords.some(keyword => keyword.toLowerCase().includes(value.toLowerCase())));
-
-    if (results.length > 0) {
-        results.forEach(result => {
-            const suggestionDiv = document.createElement('div');
-            suggestionDiv.innerHTML = `<strong>${result.title}</strong>`;
-            suggestionDiv.onclick = function () {
-                loadContent(result.page); // Load page dynamically
-                suggestionsBox.style.display = 'none'; // Hide suggestions
-                clearSearchInput(); // Clear search input
-            };
-            suggestionsBox.appendChild(suggestionDiv);
-        });
-        suggestionsBox.style.display = 'block'; // Show suggestions
-    } else {
-        suggestionsBox.style.display = 'none'; // Hide if no matches
-    }
-}
-
-// Clear search input
-function clearSearchInput() {
-    const searchInput = document.querySelector('.search-bar input');
-    if (searchInput) searchInput.value = '';
-}
-
-// Detect clicks outside of sideNav and close it
-document.addEventListener('click', function (event) {
-    const sideNav = document.getElementById("sideNav");
-    const hamburger = document.querySelector('.hamburger');
-    if (sideNav && sideNav.style.width === "150px" && !sideNav.contains(event.target) && !hamburger.contains(event.target)) {
-        closeNav();
-    }
-});
 
 // START SCREEN ASSISTANT 
 
