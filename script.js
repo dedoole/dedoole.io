@@ -214,8 +214,13 @@ function updateBrightness(value) {
 
 
 //START JOB-ALERT SECTION
-// Add event listener for LinkedIn login button
-document.addEventListener('DOMContentLoaded', function() {
+// Function to dynamically load job-alert.html
+async function loadJobAlerts() {
+  const response = await fetch('job-alert.html');
+  const html = await response.text();
+  document.getElementById('job-alerts-container').innerHTML = html;
+
+  // Add event listener for LinkedIn login button
   const linkedinLoginButton = document.getElementById('linkedin-login');
   if (linkedinLoginButton) {
     linkedinLoginButton.addEventListener('click', function() {
@@ -290,12 +295,5 @@ document.addEventListener('DOMContentLoaded', function() {
   const { code, state } = getQueryParams();
   if (code) {
     fetchAccessToken(code).then(accessToken => {
-      fetchJobAlerts(accessToken);
-    }).catch(error => {
-      console.error('Error in OAuth flow:', error);
-      alert('Failed to complete the LinkedIn OAuth process.');
-    });
-  }
-});
 
 // END JOB-ALERT SECTION
