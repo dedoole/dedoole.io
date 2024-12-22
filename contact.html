@@ -1,21 +1,21 @@
 <section id="contact-form-section">
   <div class="contact-form-container">
     <div class="contact-form-header">
-      <img src="banner.png" alt="Logo" class="contact-form-logo">
+      <img src="banner.png" alt="Banner Image" class="contact-form-banner">
       <button class="close-btn" onclick="closeContactForm()">X</button>
     </div>
-    <form class="contact-form" action="https://formspree.io/f/movvaygw" method="POST" id="contact-form">
-      <label for="name"></label>
-      <input type="text" id="name" name="name" required placeholder="Name: ">
+    <form class="contact-form" action="http://localhost:3000/send-email" method="post">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required placeholder="Name">
       
-      <label for="email"></label>
-      <input type="email" id="email" name="email" required placeholder="Email: ">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required placeholder="Email">
       
       <label for="subject">Subject</label>
       <input type="text" id="subject" name="subject" maxlength="50" required placeholder="Subject">
       
-      <label for="message"></label>
-      <textarea id="message" name="message" maxlength="1000" required placeholder="Message:  "></textarea>
+      <label for="message">Message</label>
+      <textarea id="message" name="message" maxlength="1000" required placeholder="Message"></textarea>
       
       <button type="submit">Send</button>
     </form>
