@@ -211,3 +211,91 @@ function updateBrightness(value) {
 
 //END SCREEN ASSISTANT
 
+
+
+//START JOB-ALERT SECTION
+// Add event listener for LinkedIn login button
+document.addEventListener('DOMContentLoaded', function() {
+  const linkedinLoginButton = document.getElementById('linkedin-login');
+  if (linkedinLoginButton) {
+    linkedinLoginButton.addEventListener('click', function() {
+      const clientId = '777qa7z9c32gly';
+      const redirectUri = encodeURIComponent('https://dedoole.github.io/dedoole.io/auth/linkedin/callback');
+      const state = '987654321'; // Unique identifier for CSRF protection
+      const scope = 'r_liteprofile%20r_emailaddress%20w_member_social';
+      const authUrl = `https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=${clientId}&redirect_uri=${redirectUri}&state=${state}&scope=${scope}`;
+      console.log('Redirecting to:', authUrl); // Log message for debugging
+      window.location.href = authUrl; // Redirect to LinkedIn authorization URL
+    });
+  }
+
+  // Function to extract query parameters from URL
+  function getQueryParams() {
+    const params = new URLSearchParams(window.location.search);
+    return {
+      code: params.get('code'),
+      state: params.get('state')
+    };
+  }
+
+  async function fetchAccessToken(authCode) {
+    const response = await fetch('https://www.linkedin.com/oauth/v2/accessToken', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      body: new URLSearchParams({
+        grant_type: 'authorization_code',
+        code: authCode,
+        redirect_uri: 'https://dedoole.github.io/dedoole.io/auth/linkedin/callback',
+        client_id: '777qa7z9c32gly',
+        client_secret: 'WPL_AP1.Tjvrme4L3MatBRsx.osKeJg=='
+      })
+    });
+    const data = await response.json();
+    console.log('Access Token:', data.access_token);
+    return data.access_token;
+  }
+
+  async function fetchJobAlerts(token) {
+    try {
+      const response = await fetch('https://api.linkedin.com/v2/jobAlerts', {
+        method: 'GET',
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'application/json'
+        }
+      });
+      const data = await response.json();
+      const jobsContainer = document.getElementById('jobs');
+      if (jobsContainer) {
+        jobsContainer.innerHTML = data.elements.map(job => `
+          <div class="job-alert">
+            <h3>${job.title}</h3>
+            <p>${job.description}</p>
+            <a href="${job.applyUrl}" target="_blank">Apply Now</a>
+          </div>
+        `).join('');
+      }
+    } catch (error) {
+      console.error('Error fetching job alerts:', error);
+      const jobsContainer = document.getElementById('jobs');
+      if (jobsContainer) {
+        jobsContainer.innerHTML = '<p>Failed to load job alerts. Please try again later.</p>';
+      }
+    }
+  }
+
+  // On page load, check if there's an authorization code in the URL
+  const { code, state } = getQueryParams();
+  if (code) {
+    fetchAccessToken(code).then(accessToken => {
+      fetchJobAlerts(accessToken);
+    }).catch(error => {
+      console.error('Error in OAuth flow:', error);
+      alert('Failed to complete the LinkedIn OAuth process.');
+    });
+  }
+});
+
+// END JOB-ALERT SECTION
