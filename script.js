@@ -83,7 +83,7 @@ window.addEventListener('load', () => {
         loadContent('about.html'); // Load the "About Me" content by default after loading screen
         console.log('Loading screen hidden, About Me content loaded.');
         document.body.style.overflow = 'auto'; // Allow scrolling after loading screen
-    }, 2000); // 5 seconds
+    }, 2000); // 2 seconds
 });
 
 
@@ -210,13 +210,6 @@ function updateBrightness(value) {
 }
 
 //***END SCREEN ASSISTANT
-
-//START JOB-ALERT SECTION
-// Function to dynamically load job-alert.html
-async function loadJobAlerts() {
-  const response = await fetch('job-alert.html');
-  const html = await response.text();
-  document.getElementById('job-alerts-container').innerHTML = html;
 
   // Add event listener for LinkedIn login button
   const linkedinLoginButton = document.getElementById('linkedin-login');
