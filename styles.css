@@ -226,7 +226,9 @@ h2 {
 }
 
 .contact-form-logo {
-    max-width: 50px;
+    
+    max-width: 100%; /* Adjust max-width as needed */
+    height: auto;
 }
 
 .close-btn {
