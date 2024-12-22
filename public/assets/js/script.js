@@ -23,7 +23,7 @@ function loadContent(page) {
 
 // Function to load contact form 
 function showContactForm() { 
-    loadContent('contact.html'); 
+    loadContent('public/contact.html'); 
 } 
 // Function to close the contact form 
 function closeContactForm() { 
@@ -33,7 +33,7 @@ function closeContactForm() {
 // Function to load header.html
 async function loadHeader() {
     try {
-        const response = await fetch('header.html');
+        const response = await fetch('public/header.html');
         if (!response.ok) throw new Error('Network response was not ok');
         const text = await response.text();
         document.getElementById('header-placeholder').innerHTML = text;
@@ -62,7 +62,7 @@ function showSection(sectionId) {
 // Function to load footer.html
 async function loadFooter() {
     try {
-        const response = await fetch('footer.html');
+        const response = await fetch('public/partials/footer.html');
         if (!response.ok) throw new Error('Network response was not ok');
         const text = await response.text();
         document.getElementById('footer-placeholder').innerHTML = text;
@@ -80,7 +80,7 @@ window.addEventListener('load', () => {
         document.querySelector('header').style.display = 'block';
         document.getElementById('main-content').style.display = 'block';
         document.getElementById('footer-placeholder').style.display = 'block';
-        loadContent('about.html'); // Load the "About Me" content by default after loading screen
+        loadContent('public/about.html'); // Load the "About Me" content by default after loading screen
         console.log('Loading screen hidden, About Me content loaded.');
         document.body.style.overflow = 'auto'; // Allow scrolling after loading screen
     }, 2000); // 2 seconds
