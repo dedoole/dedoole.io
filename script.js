@@ -274,26 +274,4 @@ async function loadJobAlerts() {
       const data = await response.json();
       const jobsContainer = document.getElementById('jobs');
       if (jobsContainer) {
-        jobsContainer.innerHTML = data.elements.map(job => `
-          <div class="job-alert">
-            <h3>${job.title}</h3>
-            <p>${job.description}</p>
-            <a href="${job.applyUrl}" target="_blank">Apply Now</a>
-          </div>
-        `).join('');
-      }
-    } catch (error) {
-      console.error('Error fetching job alerts:', error);
-      const jobsContainer = document.getElementById('jobs');
-      if (jobsContainer) {
-        jobsContainer.innerHTML = '<p>Failed to load job alerts. Please try again later.</p>';
-      }
-    }
-  }
-
-  // On page load, check if there's an authorization code in the URL
-  const { code, state } = getQueryParams();
-  if (code) {
-    fetchAccessToken(code).then(accessToken => {
-
-// END JOB-ALERT SECTION
+        jobsContainer[_{{{CITATION{{{_1{](https://github.com/up730418/scuba-time/tree/9b4d6256a967ae706cbc6281e4531d77030e249f/src%2Fapp%2Fapp.component.ts)
