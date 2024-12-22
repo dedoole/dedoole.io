@@ -209,13 +209,70 @@ function updateBrightness(value) {
   } 
 }
 
-//END SCREEN ASSISTANT
-
-
+//***END SCREEN ASSISTANT
 
 //START JOB-ALERT SECTION
+// Function to dynamically load job-alert.html
+async function loadJobAlerts() {
+  const response = await fetch('job-alert.html');
+  const html = await response.text();
+  document.getElementById('job-alerts-container').innerHTML = html;
 
+  // Add event listener for LinkedIn login button
+  const linkedinLoginButton = document.getElementById('linkedin-login');
+  if (linkedinLoginButton) {
+    linkedinLoginButton.addEventListener('click', function() {
+      const clientId = '777qa7z9c32gly';
+      const redirectUri = encodeURIComponent('https://dedoole.github.io/dedoole.io/auth/linkedin/callback');
+      const state = '987654321'; // Unique identifier for CSRF protection
+      const scope = 'r_liteprofile%20r_emailaddress%20w_member_social';
+      const authUrl = `https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=${clientId}&redirect_uri=${redirectUri}&state=${state}&scope=${scope}`;
+      console.log('Redirecting to:', authUrl); // Log message for debugging
+      window.location.href = authUrl; // Redirect to LinkedIn authorization URL
+    });
+  }
 
+  // Function to extract query parameters from URL
+  function getQueryParams() {
+    const params = new URLSearchParams(window.location.search);
+    return {
+      code: params.get('code'),
+      state: params.get('state')
+    };
+  }
+
+  async function fetchAccessToken(authCode) {
+    const response = await fetch('https://www.linkedin.com/oauth/v2/accessToken', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      body: new URLSearchParams({
+        grant_type: 'authorization_code',
+        code: authCode,
+        redirect_uri: 'https://dedoole.github.io/dedoole.io/auth/linkedin/callback',
+        client_id: '777qa7z9c32gly',
+        client_secret: 'WPL_AP1.Tjvrme4L3MatBRsx.osKeJg=='
+      })
+    });
+    const data = await response.json();
+    console.log('Access Token:', data.access_token);
+    return data.access_token;
+  }
+
+  async function fetchJobAlerts(token) {
+    try {
+      const response = await fetch('https://api.linkedin.com/v2/jobAlerts', {
+        method: 'GET',
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'application/json'
+        }
+      });
+      const data = await response.json();
+      const jobsContainer = document.getElementById('jobs');
+      if (jobsContainer) {
+        jobsContainer[_{{{CITATION{{{_1{](https://github.com/up730418/scuba-time/tree/9b4d6256a967ae706cbc6281e4531d77030e249f/src%2Fapp%2Fapp.component.ts)
 
 
 // END JOB-ALERT SECTION
