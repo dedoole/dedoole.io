@@ -21,19 +21,19 @@ function loadContent(page) {
     .catch(error => console.error('Error loading content:', error));
 }
 
-// Function to load contact form 
+// Function to load contact form
 function showContactForm() { 
-    loadContent('public/contact.html'); 
-} 
-// Function to close the contact form 
+    loadContent('contact.html'); 
+}
+// Function to close the contact form
 function closeContactForm() { 
-     document.getElementById('main-content').innerHTML = '';
+    document.getElementById('main-content').innerHTML = '';
 }
 
 // Function to load header.html
 async function loadHeader() {
     try {
-        const response = await fetch('public/header.html');
+        const response = await fetch('partials/header.html');
         if (!response.ok) throw new Error('Network response was not ok');
         const text = await response.text();
         document.getElementById('header-placeholder').innerHTML = text;
@@ -43,7 +43,6 @@ async function loadHeader() {
     }
 }
 loadHeader();
-
 
 // Function to show a specific section
 function showSection(sectionId) {
@@ -58,11 +57,10 @@ function showSection(sectionId) {
     }
 }
 
-
 // Function to load footer.html
 async function loadFooter() {
     try {
-        const response = await fetch('public/partials/footer.html');
+        const response = await fetch('partials/footer.html');
         if (!response.ok) throw new Error('Network response was not ok');
         const text = await response.text();
         document.getElementById('footer-placeholder').innerHTML = text;
@@ -80,14 +78,13 @@ window.addEventListener('load', () => {
         document.querySelector('header').style.display = 'block';
         document.getElementById('main-content').style.display = 'block';
         document.getElementById('footer-placeholder').style.display = 'block';
-        loadContent('public/about.html'); // Load the "About Me" content by default after loading screen
+        loadContent('about.html'); // Load the "About Me" content by default after loading screen
         console.log('Loading screen hidden, About Me content loaded.');
         document.body.style.overflow = 'auto'; // Allow scrolling after loading screen
     }, 2000); // 2 seconds
 });
 
-
-// START SCREEN ASSISTANT 
+// START SCREEN ASSISTANT
 
 // Initial font size percentage
 let fontSizePercentage = 100;
@@ -203,11 +200,11 @@ function toggleScroll() {
     }
 }
 
-function updateBrightness(value) { 
-    const content = document.querySelector('.page-content'); 
-    if (content) { content.style.filter = `brightness(${value})`;
-  } 
+function updateBrightness(value) {
+    const content = document.querySelector('.page-content');
+    if (content) {
+        content.style.filter = `brightness(${value})`;
+    }
 }
 
-//***END SCREEN ASSISTANT
-
+// END SCREEN ASSISTANT
